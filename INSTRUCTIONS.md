@@ -24,6 +24,7 @@ Event
 
 # Architecture
 
+- Use `deps.edn` for dependencies.
 - Use hiccup for HTML. And Tailwind for CSS. Only use ClojureScript for a dropdown with search in the forms for linked objects:
     - A venue's neighborhood
     - An event's venue
