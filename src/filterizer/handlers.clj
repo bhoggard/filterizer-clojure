@@ -1,14 +1,18 @@
 (ns filterizer.handlers
-  (:require [compojure.core :refer [defroutes GET POST]]
-            [compojure.route :as route]
+  (:require [reitit.ring :as ring]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [ring.util.response :refer [response content-type]]
             [filterizer.views.home :as home]))
 
-(defroutes app-routes
-  (GET "/" [] (home/index))
-  (route/resources "/")
-  (route/not-found "Not Found"))
+(def routes
+  [["/" {:get {:handler (fn [_] {:status 200
+                                   :headers {"Content-Type" "text/html; charset=utf-8"}
+                                   :body (home/index)})}}]])
 
 (def app
-  (wrap-defaults app-routes site-defaults))
+  (ring/ring-handler
+   (ring/router routes)
+   (ring/routes
+    (ring/create-resource-handler {:path "/"})
+    (ring/create-default-handler
+     {:not-found (constantly {:status 404 :body "Not Found"})}))
+   {:middleware [[wrap-defaults site-defaults]]}))
