@@ -1,0 +1,27 @@
+{:paths ["src" "resources"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+
+        ;; Web server
+        ring/ring-core {:mvn/version "1.11.0"}
+        ring/ring-jetty-adapter {:mvn/version "1.11.0"}
+        ring/ring-defaults {:mvn/version "0.4.0"}
+
+        ;; Routing
+        compojure/compojure {:mvn/version "1.7.0"}
+
+        ;; HTML templating
+        hiccup/hiccup {:mvn/version "2.0.0-RC3"}
+
+        ;; Environment variables
+        environ/environ {:mvn/version "1.2.0"}
+
+        ;; Time handling
+        clojure.java-time/clojure.java-time {:mvn/version "1.4.2"}}
+
+ :aliases
+ {:dev {:extra-paths ["dev"]
+        :extra-deps {ring/ring-devel {:mvn/version "1.11.0"}}}
+
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}}
+          :ns-default build}}}

@@ -1,0 +1,12 @@
+{
+  "name": "filterizer-clojure",
+  "version": "1.0.0",
+  "description": "NYC Art Calendar",
+  "scripts": {
+    "build:css": "tailwindcss -i ./resources/css/input.css -o ./resources/public/css/tailwind.css",
+    "watch:css": "tailwindcss -i ./resources/css/input.css -o ./resources/public/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

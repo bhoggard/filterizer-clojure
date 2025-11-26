@@ -1,0 +1,29 @@
+# Clojure
+.cpcache/
+.nrepl-port
+.rebel_readline_history
+target/
+classes/
+
+# ClojureScript
+.shadow-cljs/
+node_modules/
+resources/public/js/
+
+# Tailwind CSS output
+resources/public/css/tailwind.css
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.lsp/
+.clj-kondo/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
