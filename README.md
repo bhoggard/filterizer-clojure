@@ -8,25 +8,25 @@ Web application for a one-pager art calendar showcasing NYC art events.
 
 - Java 11 or higher
 - Clojure CLI tools
-- Node.js and npm (for Tailwind CSS and ClojureScript)
+- Node.js and Yarn (for Tailwind CSS and ClojureScript)
 
 ### Installation
 
 1. Install dependencies:
 ```bash
-npm install
+yarn install
 ```
 
 2. Build Tailwind CSS:
 ```bash
-npm run build:css
+yarn build:css
 ```
 
 ### Development
 
 1. Watch Tailwind CSS for changes:
 ```bash
-npm run watch:css
+yarn watch:css
 ```
 
 2. In another terminal, start the Clojure web server:
@@ -36,7 +36,7 @@ clj -M -m filterizer.core
 
 3. (Optional) For ClojureScript development with shadow-cljs:
 ```bash
-npx shadow-cljs watch app
+yarn shadow-cljs watch app
 ```
 
 The application will be available at http://localhost:3000
