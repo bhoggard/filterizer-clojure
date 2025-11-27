@@ -1,20 +1,20 @@
 (ns filterizer.views.home
-  (:require [hiccup2.core :as h]
-            [hiccup.page :refer [html5]]))
+  (:require [hiccup2.core :as h]))
 
 (defn layout [& content]
-  (html5
+  [:html
    [:head
     [:meta {:charset "UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     [:title "Art Calendar - NYC"]
     [:link {:rel "stylesheet" :href "/css/tailwind.css"}]
     [:script {:src "/js/main.js" :defer true}]]
-   [:body content]))
+   [:body content]])
 
 (defn index []
   (str
    (h/html
+    {:mode :html}
     (layout
      [:div.min-h-screen.bg-gray-50
       [:header.bg-white.shadow-sm
