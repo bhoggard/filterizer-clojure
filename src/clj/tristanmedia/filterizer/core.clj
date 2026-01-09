@@ -5,16 +5,15 @@
    [tristanmedia.filterizer.config :as config]
    [tristanmedia.filterizer.env :refer [defaults]]
 
-    ;; Edges
-   [kit.edge.db.sql.conman] 
-   [kit.edge.db.sql.migratus] 
-   [kit.edge.db.postgres] 
-   [kit.edge.db.mysql] 
-   [kit.edge.templating.selmer] 
+   ;; Edges
+   [kit.edge.db.sql.conman]
+   [kit.edge.db.sql.migratus]
+   [kit.edge.db.postgres]
+   [kit.edge.templating.selmer]
    [kit.edge.server.undertow]
    [tristanmedia.filterizer.web.handler]
 
-    ;; Routes
+   ;; Routes
    [tristanmedia.filterizer.web.routes.api])
   (:gen-class))
 

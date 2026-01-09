@@ -2,10 +2,10 @@
  #profile {:dev  :dev
            :test :test
            :prod :prod}
- 
- 
- 
- 
+
+
+
+
 
  :server/http
  {:port    #long #or [#env PORT 3000]
@@ -47,14 +47,14 @@
 
  :router/core
  {:routes #ig/ref :router/routes
-  :env #ig/ref :system/env} 
+  :env #ig/ref :system/env}
 
  :templating/selmer
- {} 
+ {}
 
  :db.sql/connection
- #profile {:dev  {:jdbc-url "jdbc:postgresql://localhost/tristanmedia.filterizer?user=tristanmedia.filterizer&password=tristanmedia.filterizer"}
-           :test {}
+ #profile {:dev  {:jdbc-url "jdbc:postgresql://localhost/tristanmedia-filterizer-dev"}
+           :test {:jdbc-url "jdbc:postgresql://localhost/tristanmedia-filterizer-test"}
            :prod {:jdbc-url   #env JDBC_URL
                   :init-size  1
                   :min-idle   1
@@ -65,9 +65,9 @@
  {:conn     #ig/ref :db.sql/connection
   :options  {}
   :filename "queries.sql"
-  :env #ig/ref :system/env} 
+  :env #ig/ref :system/env}
 
  :db.sql/migrations
  {:store            :database
   :db               {:datasource #ig/ref :db.sql/connection}
-  :migrate-on-init? true} }
+  :migrate-on-init? true}}
