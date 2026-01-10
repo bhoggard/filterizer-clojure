@@ -4,3 +4,21 @@ CREATE TABLE IF NOT EXISTS neighborhood (
 );
 --;;
 CREATE UNIQUE INDEX index_neighborhood_on_name ON neighborhood(name);
+--;;
+INSERT INTO neighborhood (name) VALUES
+('Chelsea'),
+('Chinatown'),
+('DUMBO'),
+('East Village'),
+('Greenwich Village'),
+('Harlem'),
+('Long Island City'),
+('Lower East Side'),
+('Midtown'),
+('Park Slope'),
+('Prospect Heights'),
+('Red Hook'),
+('Soho'),
+('Tribeca'),
+('Upper East Side'),
+('Upper West Side');
